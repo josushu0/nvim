@@ -45,6 +45,7 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
+	use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" }
 
 	-- Colorscheme
 	use { "rose-pine/neovim", as = "rose-pine" }
@@ -61,6 +62,9 @@ return packer.startup(function(use)
 	-- Snippets
 	use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" }
 	use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }
+
+	-- Telescope
+	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
