@@ -47,7 +47,7 @@ keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Exit insert mode
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "kj", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
