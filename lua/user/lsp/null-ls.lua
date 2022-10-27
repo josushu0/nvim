@@ -12,6 +12,30 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Formatting
 		formatting.stylua,
+		formatting.eslint.with({
+			condition = function(utils)
+				return utils.root_has_file({
+					".eslintrc.js",
+					".eslintrc.cjs",
+					".eslintrc.yaml",
+					".eslintrc.yml",
+					".eslintrc.json",
+				})
+			end,
+		}),
+		-- Diagnostics
+		diagnostics.eslint.with({
+			condition = function(utils)
+				return utils.root_has_file({
+					".eslintrc.js",
+					".eslintrc.cjs",
+					".eslintrc.yaml",
+					".eslintrc.yml",
+					".eslintrc.json",
+				})
+			end,
+		}),
 	},
 })
