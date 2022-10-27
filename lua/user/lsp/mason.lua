@@ -11,7 +11,7 @@ local servers = {
 	"marksman",
 	"svelte",
 	"tailwindcss",
-	"volar"
+	"volar",
 }
 
 local settings = {

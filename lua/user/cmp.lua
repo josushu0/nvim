@@ -43,7 +43,7 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-cmp.setup {
+cmp.setup({
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -125,4 +125,4 @@ cmp.setup {
 	experimental = {
 		ghost_text = true,
 	},
-}
+})
