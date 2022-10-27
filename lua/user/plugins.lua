@@ -46,6 +46,10 @@ return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" } -- Have packer manage itself
 
+	-- Colorscheme
+	use { "rose-pine/neovim", as = "rose-pine" }
+	use { "catppuccin/nvim", as = "catppuccin" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
