@@ -25,6 +25,21 @@ null_ls.setup({
 				})
 			end,
 		}),
+		formatting.prettier.with({
+			condition = function(utils)
+				return utils.root_has_file({
+					".prettierrc",
+					".prettierrc.json",
+					".prettierrc.yml",
+					".prettierrc.js",
+					".prettierrc.cjs",
+					"prettier.config.js",
+					"prettier.config.cjs",
+					".prettierrc.toml",
+				})
+			end,
+		}),
+
 		-- Diagnostics
 		diagnostics.eslint.with({
 			condition = function(utils)
