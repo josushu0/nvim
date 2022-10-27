@@ -53,6 +53,7 @@ return packer.startup(function(use)
 	use({ "nvim-tree/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
 	use({ "akinsho/bufferline.nvim", commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" })
 	use({ "famiu/bufdelete.nvim", commit = "e88dbe0ba5829119d8edb5fc69d3c8553e324a93" })
+	use({ "max397574/better-escape.nvim", commit = "d5ee0cef56a7e41a86048c14f25e964876ac20c1" })
 
 	-- Colorscheme
 	use({ "rose-pine/neovim", as = "rose-pine" })
