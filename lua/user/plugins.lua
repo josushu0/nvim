@@ -82,6 +82,7 @@ return packer.startup(function(use)
 
 	-- Toggleterm
 	use { "akinsho/toggleterm.nvim", commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda" }
+	use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
 
 
   -- Automatically set up your configuration after cloning packer.nvim
