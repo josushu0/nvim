@@ -48,4 +48,27 @@ configs.setup({
 		enable = true,
 		enable_autocmd = false,
 	},
+
+	autotag = {
+		enable = true,
+		filetypes = {
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"vue",
+			"astro",
+			"tsx",
+			"jsx",
+			"rescript",
+			"xml",
+			"php",
+			"markdown",
+			"glimmer",
+			"handlebars",
+			"hbs",
+		},
+	},
 })
