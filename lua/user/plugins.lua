@@ -66,7 +66,7 @@ return packer.startup(function(use)
 
 	-- Colorscheme
 	use({ "rose-pine/neovim", as = "rose-pine" })
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "catppuccin/nvim", as = "catppuccin", commit = "c4f0f1a88304378cb76ac0a0c00a99f6d58f972f" })
 
 	-- Cmp plugins
 	use({ "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" })
