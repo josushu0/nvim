@@ -61,6 +61,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" })
 	use({ "NvChad/nvim-colorizer.lua", commit = "9dd7ecde55b06b5114e1fa67c522433e7e59db8b" })
 	use({ "axelvc/template-string.nvim", commit = "84e50b878caa92100c65deec12ccb41aa4ef3fae" })
+	use({ "Darazaki/indent-o-matic", commit = "68f19ea15da7e944e7a5c848831837d2023b4ac2" })
 
 	-- Colorscheme
 	use({ "rose-pine/neovim", as = "rose-pine" })
