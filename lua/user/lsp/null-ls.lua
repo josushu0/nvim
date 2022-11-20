@@ -24,6 +24,7 @@ null_ls.setup({
 					".eslintrc.json",
 				})
 			end,
+			extra_filetypes = { "astro" },
 		}),
 		formatting.prettier.with({
 			condition = function(utils)
@@ -38,6 +39,7 @@ null_ls.setup({
 					".prettierrc.toml",
 				})
 			end,
+			extra_filetypes = { "astro" },
 		}),
 
 		-- Diagnostics
@@ -51,6 +53,7 @@ null_ls.setup({
 					".eslintrc.json",
 				})
 			end,
+			extra_filetypes = { "astro" },
 		}),
 	},
 })
