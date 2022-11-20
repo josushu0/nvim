@@ -7,7 +7,6 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"astro",
-	"cssls",
 	"marksman",
 	"svelte",
 	"tailwindcss",
