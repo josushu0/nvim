@@ -11,6 +11,7 @@ local servers = {
 	"svelte",
 	"tailwindcss",
 	"volar",
+	"taplo",
 }
 
 local settings = {
