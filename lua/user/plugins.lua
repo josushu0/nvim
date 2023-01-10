@@ -59,6 +59,9 @@ return packer.startup(function(use)
 	use({ "axelvc/template-string.nvim", commit = "84e50b878caa92100c65deec12ccb41aa4ef3fae" })
 	use({ "Darazaki/indent-o-matic", commit = "68f19ea15da7e944e7a5c848831837d2023b4ac2" })
 
+	-- Mini
+	use({ "echasnovski/mini.nvim", branch = "stable" })
+
 	-- Colorscheme
 	use({ "rose-pine/neovim", as = "rose-pine" })
 	use({ "catppuccin/nvim", as = "catppuccin", commit = "c4f0f1a88304378cb76ac0a0c00a99f6d58f972f" })
