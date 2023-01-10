@@ -30,13 +30,11 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>b", ":buffers<CR>:buffer<Space>" , opts)
+keymap("n", "<leader>bb", ":buffers<CR>:buffer<Space>" , opts)
+keymap("n", "<leader>bc", ":lua MiniBufremove.delete()<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
--- Close buffers
-keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 
 -- Exit neovim
 keymap("n", "<leader>q", "<cmd>q<CR>", opts)
@@ -46,9 +44,6 @@ keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
-
--- Exit insert mode
--- keymap("i", "kj", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
