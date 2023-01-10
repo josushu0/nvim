@@ -60,3 +60,6 @@ keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Sessions
 keymap("n", "<leader>ss", "<cmd>lua MiniSessions.select()<CR>", opts)
+
+-- LSP
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
