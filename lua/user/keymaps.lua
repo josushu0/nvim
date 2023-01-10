@@ -57,3 +57,6 @@ keymap("n", "<leader>o", ":NvimTreeFocus<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- Sessions
+keymap("n", "<leader>ss", "<cmd>lua MiniSessions.select()<CR>", opts)
