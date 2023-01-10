@@ -1,8 +1,23 @@
-local status_ok, comment = pcall(require, "Comment")
+local status_ok, comment = pcall(require, "mini.comment")
 if not status_ok then
 	return
 end
 
 comment.setup({
-	pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+	mappings = {
+		-- Toggle comment (like `gcip` - comment inner paragraph) for both
+		-- Normal and Visual modes
+		comment = "gc",
+
+		-- Toggle comment on current line
+		comment_line = "gcc",
+
+		-- Define 'comment' textobject (like `dgc` - delete whole comment block)
+		textobject = "gc",
+	},
+	hooks = {
+		pre = function()
+			require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+		end,
+	},
 })
