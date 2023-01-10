@@ -46,3 +46,4 @@ vim.filetype.add({															-- add filetypes
 		astro = "astro"
 	}
 })
+vim.g.neovide_cursor_trail_size = 0
