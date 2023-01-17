@@ -41,9 +41,42 @@ vim.opt.whichwrap:append("<,>,[,],h,l")         -- keys allowed to move to the p
 vim.opt.iskeyword:append("-")                   -- treats words with `-` as single words
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.filetype.add({															-- add filetypes
 	extension = {
 		astro = "astro"
 	}
 })
 vim.g.neovide_cursor_trail_size = 0
+
+local signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in pairs(signs) do
+	vim.fn.sign_define(sign.name, { text = sign.text, texthl = sign.name, numhl = sign.name })
+end
+
+local config = {
+	virtual_text = false,
+	signs = {
+		active = true,
+	},
+	update_in_insert = true,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = true,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+}
+
+vim.diagnostic.config(config)
