@@ -1,5 +1,6 @@
 {
   "better-escape.nvim": { "branch": "master", "commit": "6fed33809cde3b416087fc540ad9eb17ec470193" },
+  "buffer_manager.nvim": { "branch": "main", "commit": "86f26440c62365fcbceccdfff32bf01f71748d33" },
   "catppuccin": { "branch": "main", "commit": "26e498db297607fe17a6206c5a28f0f4cb532954" },
   "gitsigns.nvim": { "branch": "main", "commit": "bb808fc7376ed7bac0fbe8f47b83d4bf01738167" },
   "indent-o-matic": { "branch": "master", "commit": "749b7cbae2d52aa1f65b6a2cd7b879a0b52ac3a1" },

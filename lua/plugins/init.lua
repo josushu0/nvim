@@ -92,4 +92,17 @@ return {
 			standard_widths = { 2, 4, 8 },
 		},
 	},
+	{
+		"j-morano/buffer_manager.nvim",
+		keys = {
+			{
+				"<leader>bb",
+				"<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>",
+				desc = "Open buffer selection",
+			},
+		},
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
 }
