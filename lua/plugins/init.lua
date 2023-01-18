@@ -66,11 +66,9 @@ return {
 	},
 	{
 		"max397574/better-escape.nvim",
-		keys = {
-			{ "kj", desc = "Escape to normal mode" }
-		},
+		event = "InsertEnter",
 		opts = {
-			mapping = { "kj" },
+			mapping = { "kj", "jk" },
 		},
 	},
 	{
