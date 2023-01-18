@@ -1,6 +1,6 @@
 -- <CR> keys
 local keys = {
-	["cr"] = vim.api.nvim_replace_termcodes("<CR>", true, true, true),
+	["tab"] = vim.api.nvim_replace_termcodes("<Tab>", true, true, true),
 	["ctrl-y"] = vim.api.nvim_replace_termcodes("<C-y>", true, true, true),
 	["ctrl-y_cr"] = vim.api.nvim_replace_termcodes("<C-y><CR>", true, true, true),
 }
@@ -15,7 +15,7 @@ _G.cr_action = function()
 		-- If popup is not visible, use plain `<CR>`. You might want to customize
 		-- according to other plugins. For example, to use 'mini.pairs', replace
 		-- next line with `return require('mini.pairs').cr()`
-		return keys["cr"]
+		return keys["tab"]
 	end
 end
 
