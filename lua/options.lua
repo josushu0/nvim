@@ -49,34 +49,3 @@ vim.filetype.add({															-- add filetypes
 	}
 })
 vim.g.neovide_cursor_trail_size = 0
-
-local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
-}
-
-for _, sign in pairs(signs) do
-	vim.fn.sign_define(sign.name, { text = sign.text, texthl = sign.name, numhl = sign.name })
-end
-
-local config = {
-	virtual_text = false,
-	signs = {
-		active = true,
-	},
-	update_in_insert = true,
-	underline = true,
-	severity_sort = true,
-	float = {
-		focusable = true,
-		style = "minimal",
-		border = "rounded",
-		source = "always",
-		header = "",
-		prefix = "",
-	},
-}
-
-vim.diagnostic.config(config)

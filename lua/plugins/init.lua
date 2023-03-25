@@ -1,5 +1,13 @@
 return {
 	{
+		"projekt0n/circles.nvim",
+		branch = "main",
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" }
+		},
+		config = true
+	},
+	{
 		"echasnovski/mini.ai",
 		branch = "stable",
 		keys = {
@@ -14,18 +22,10 @@ return {
 		"echasnovski/mini.bufremove",
 		branch = "stable",
 		keys = {
-			{ "<leader>bc", ":lua MiniBufremove.delete()<CR>", desc = "Delete a buffer" },
+			{ "<leader>c", ":lua MiniBufremove.delete()<CR>", desc = "Delete a buffer" },
 		},
 		config = function()
 			require("mini.bufremove").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.completion",
-		branch = "stable",
-		event = "InsertEnter",
-		config = function()
-			require("mini.completion").setup()
 		end,
 	},
 	{
@@ -44,17 +44,6 @@ return {
 			require("mini.pairs").setup({
 				modes = { insert = true, command = true, terminal = true },
 			})
-		end,
-	},
-	{
-		"echasnovski/mini.sessions",
-		branch = "stable",
-		event = "VimEnter",
-		keys = {
-			{ "<leader>ss", "<cmd>lua MiniSessions.select()<CR>", desc = "Select a session" },
-		},
-		config = function()
-			require("mini.sessions").setup()
 		end,
 	},
 	{

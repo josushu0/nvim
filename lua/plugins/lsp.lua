@@ -1,14 +1,31 @@
 return {
-	"williamboman/mason-lspconfig.nvim",
-	version = "*",
+	"VonHeikemen/lsp-zero.nvim",
+	branch = "v2.x",
 	dependencies = {
-		{ "williamboman/mason.nvim" },
+		-- LSP Support
 		{ "neovim/nvim-lspconfig" },
+		{ "williamboman/mason.nvim" },
+		{ "williamboman/mason-lspconfig.nvim" },
+
+		-- Autocompletion
+		{ "hrsh7th/nvim-cmp" },
+		{ "hrsh7th/cmp-buffer" },
+		{ "hrsh7th/cmp-path" },
+		{ "saadparwaiz1/cmp_luasnip" },
+		{ "hrsh7th/cmp-nvim-lua" },
+		{ "hrsh7th/cmp-nvim-lsp" },
+		{ "L3MON4D3/LuaSnip" },
 	},
-	event = "BufReadPre",
 	config = function()
-		local servers = {
-			"sumneko_lua",
+		local lsp = require("lsp-zero").preset({
+			name = "recommended",
+			manage_nvim_cmp = {
+				set_extra_mappings = true,
+			},
+		})
+
+		lsp.ensure_installed({
+			"lua_ls",
 			"cssls",
 			"html",
 			"tsserver",
@@ -21,43 +38,18 @@ return {
 			"tailwindcss",
 			"volar",
 			"taplo",
-		}
-
-		local settings = {
-			ui = {
-				border = "none",
-				icons = {
-					package_installed = "◍",
-					package_pending = "◍",
-					package_uninstalled = "◍",
-				},
-			},
-			log_level = vim.log.levels.INFO,
-			max_concurrent_installers = 4,
-		}
-
-		require("mason").setup(settings)
-		require("mason-lspconfig").setup({
-			ensure_installed = servers,
-			automatic_installation = true,
 		})
 
-		local opts = {}
-
-		for _, server in pairs(servers) do
-			opts = {
-				on_attach = require("lsp.handlers").on_attach,
-				capabilities = require("lsp.handlers").capabilities,
-			}
-
-			server = vim.split(server, "@")[1]
-
-			local require_ok, conf_opts = pcall(require, "lsp.settings." .. server)
-			if require_ok then
-				opts = vim.tbl_deep_extend("force", conf_opts, opts)
+		lsp.on_attach(function(client, bufnr)
+			lsp.default_keymaps({ buffer = bufnr })
+			if client.name == "lua_ls" then
+				client.server_capabilities.documentFormattingProvider = false
 			end
+		end)
 
-			require("lspconfig")[server].setup(opts)
-		end
+		require("lspconfig").tailwindcss.setup(require("lsp.settings.tailwindcss"))
+		require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+		lsp.setup()
 	end,
 }

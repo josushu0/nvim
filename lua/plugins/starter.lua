@@ -16,8 +16,6 @@ return {
 		items = {
 			require("mini.starter").sections.builtin_actions(),
 			require("mini.starter").sections.recent_files(5, true),
-			-- Use this if you set up 'mini.sessions'
-			require("mini.starter").sections.sessions(5, true),
 		},
 		footer = "",
 	})

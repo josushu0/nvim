@@ -27,8 +27,8 @@ keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
-keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+keymap("n", "gn", "<cmd>bnext<CR>", opts)
+keymap("n", "gp", "<cmd>bprevious<CR>", opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -46,13 +46,5 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Autocompletion
-keymap("i", "<C-j>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
-keymap("i", "<C-k>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
-keymap("i", "<Tab>", "v:lua._G.cr_action()", { noremap = true, expr = true })
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
 -- LSP Formatting
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opts)
+keymap("n", "<leader>lf", "<cmd>LspZeroFormat<CR>", opts)
